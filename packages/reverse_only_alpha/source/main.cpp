@@ -10,12 +10,10 @@
   }
 
   // This is pretty ugly...
-#define iter reverse_only_alpha_t
-#define args(type) string.type(), string.end(), string.r##type(), string.rend()
-  auto begin_it = iter(args(begin));
-  const auto end_it = iter(args(end));
-#undef args
-#undef iter
+  auto begin_it
+      = reverse_only_alpha_t(string.begin(), string.end(), string.rbegin(), string.rend());
+  const auto end_it
+      = reverse_only_alpha_t(string.end(), string.end(), string.rend(), string.rend());
 
   return {begin_it, end_it};
 }
