@@ -1,13 +1,3 @@
-# Format.cmake
-
-CPMAddPackage(
-  NAME Format.cmake
-  GITHUB_REPOSITORY TheLartians/Format.cmake
-  VERSION 1.6
-  OPTIONS # enable cmake formatting
-          "FORMAT_CHECK_CMAKE ON"
-)
-
 # fmt
 
 CPMAddPackage(

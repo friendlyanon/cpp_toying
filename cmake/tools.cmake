@@ -72,3 +72,10 @@ if(USE_CCACHE)
     VERSION 1.2.1
   )
 endif()
+
+CPMAddPackage(
+  NAME Format.cmake
+  GITHUB_REPOSITORY TheLartians/Format.cmake
+  VERSION 1.6
+  OPTIONS "FORMAT_CHECK_CMAKE ON"
+)
