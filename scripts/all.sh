@@ -1,7 +1,7 @@
 #!/bin/sh
 
 CWD="$(cd "$(dirname "$0")" && pwd)"
-TARGET="build/standalone"
+TARGET="build"
 
 cd $CWD/..
 
@@ -10,7 +10,7 @@ configure() {
     return 0
   fi
 
-  cmake -Hstandalone -B $TARGET -GNinja \
+  cmake -Hall -B $TARGET -GNinja \
     -DUSE_CCACHE:BOOL=ON \
     -DCPM_SOURCE_CACHE:PATH="$(pwd)/.cpm-cache"
 }
