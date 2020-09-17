@@ -1,0 +1,6 @@
+/build*
+/.vscode
+/.cpm-cache
+/all/cmake-build-*
+/.idea
+.DS_Store
