@@ -19,14 +19,18 @@ constexpr auto is_not_one = [](int i) { return !is_one(i); };
   for (;;) {
     const auto previous = begin++;
     begin = std::find_if(begin, end, is_not_one);
-    const bool at_end = begin == end;
 
-    const auto difference = begin - previous - (at_end ? 1 : 0);
+    const auto difference = begin - previous;
     if (difference > result) {
       result = difference;
     }
 
-    if (at_end) {
+    if (begin == end) {
+      break;
+    }
+
+    begin = std::find_if(++begin, end, is_one);
+    if (begin == end) {
       break;
     }
   }
