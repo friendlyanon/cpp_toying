@@ -25,7 +25,7 @@ namespace anon {
 
     [[nodiscard]] constexpr char dereference() const noexcept { return _current; }
 
-    constexpr void increment() noexcept {
+    constexpr void increment() {
       if (const char c = detail::get_and_increment(_begin); detail::isalpha(c)) {
         _rbegin = std::find_if(_rbegin, _rend, &detail::isalpha);
         _current = detail::get_and_increment(_rbegin);
