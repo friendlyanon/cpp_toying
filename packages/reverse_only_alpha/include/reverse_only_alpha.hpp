@@ -11,7 +11,6 @@ namespace anon {
       : public neo::iterator_facade<reverse_only_alpha_t<ForwardIter, ReverseIter>> {
     using fIt = ForwardIter;
     using rIt = ReverseIter;
-    using Self = reverse_only_alpha_t<fIt, rIt>;
 
     fIt _begin, _end;
     rIt _rbegin, _rend;
@@ -34,11 +33,11 @@ namespace anon {
       }
     }
 
-    [[nodiscard]] constexpr std::ptrdiff_t distance_to(Self o) const noexcept {
+    [[nodiscard]] constexpr std::ptrdiff_t distance_to(self_type o) const noexcept {
       return o._begin - _begin;
     }
 
-    [[nodiscard]] constexpr bool equal_to(Self o) const noexcept {
+    [[nodiscard]] constexpr bool equal_to(self_type o) const noexcept {
       return o._begin == _begin && o._end == _end;
     }
   };
