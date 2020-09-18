@@ -43,6 +43,6 @@ int main() {
   const std::vector numbers{1, 1, 0, 1, 1, 1};
   const auto max_consecutive = max_consecutive_ones(numbers);
 
-  fmt::print("[{}]\n", fmt::join(numbers.begin(), numbers.end(), ", "));
+  fmt::print("[{}]\n", fmt::join(numbers, ", "));
   fmt::print("Max number of consecutive ones: {}\n", max_consecutive);
 }
