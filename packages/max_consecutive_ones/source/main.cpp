@@ -4,15 +4,16 @@
 #include <cstddef>
 #include <vector>
 
-constexpr auto is_one = [](int i) { return i == 1; };
-constexpr auto is_not_one = [](int i) { return !is_one(i); };
+static constexpr bool is_one(int i) { return i == 1; }
+
+static constexpr bool is_not_one(int i) { return !is_one(i); }
 
 [[nodiscard]] std::ptrdiff_t max_consecutive_ones(const std::vector<int>& numbers) {
   auto begin = numbers.begin();
   const auto end = numbers.end();
   begin = std::find_if(begin, end, is_one);
   if (begin == end) {
-    return {0};
+    return 0;
   }
 
   std::ptrdiff_t result = 0;
