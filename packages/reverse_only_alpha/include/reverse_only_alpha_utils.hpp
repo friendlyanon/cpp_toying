@@ -4,7 +4,7 @@
 
 namespace anon::detail {
 
-  constexpr auto get_and_increment(auto& pointer) noexcept {
+  static constexpr auto get_and_increment(auto& pointer) noexcept {
     const auto value = *pointer;
     ++pointer;
     return value;
