@@ -9,6 +9,8 @@
     return {string};
   }
 
+  using anon::reverse_only_alpha_t;
+
   // This is pretty ugly...
   auto begin_it
       = reverse_only_alpha_t(string.begin(), string.end(), string.rbegin(), string.rend());

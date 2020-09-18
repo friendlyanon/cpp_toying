@@ -44,7 +44,7 @@ CPMAddPackage(NAME "${ROOT_PROJECT_NAME}" SOURCE_DIR "${CMAKE_CURRENT_LIST_DIR}/
 
 # ---- Create executable ----
 
-set(headers include/reverse_only_alpha.hpp)
+set(headers include/reverse_only_alpha.hpp include/reverse_only_alpha_utils.hpp)
 
 set(sources source/main.cpp)
 
