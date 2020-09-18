@@ -1,7 +1,7 @@
 #include <fmt/core.h>
+#include <fmt/format.h>
 
 #include <algorithm>
-#include <cstddef>
 #include <vector>
 
 static constexpr bool is_one(int i) { return i == 1; }
@@ -43,11 +43,6 @@ int main() {
   const std::vector numbers{1, 1, 0, 1, 1, 1};
   const auto max_consecutive = max_consecutive_ones(numbers);
 
-  std::puts("Numbers: [");
-  for (int number : numbers) {
-    fmt::print("  {},\n", number);
-  }
-  std::puts("]");
-
+  fmt::print("[{}]\n", fmt::join(numbers.begin(), numbers.end(), ", "));
   fmt::print("Max number of consecutive ones: {}\n", max_consecutive);
 }
