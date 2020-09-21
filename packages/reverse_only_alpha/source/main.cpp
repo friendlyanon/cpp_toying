@@ -4,7 +4,7 @@
 
 #include "reverse_only_alpha.hpp"
 
-[[nodiscard]] std::string reverse_only_alpha(const std::string& string) {
+[[nodiscard]] static std::string reverse_only_alpha(const std::string& string) {
   if (string.length() < 2) {
     return {string};
   }
